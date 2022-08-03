@@ -60,9 +60,11 @@
         </div>
 
         <div class="p1">
-            <div class="cont-input">
-                <i class="bx bx-dollar" />
-                <input bind:value={dato.dinero} type="number" placeholder="00"  />
+            <div class="cont-input ">
+                <div class="shadow just">
+                    <i class="bx bx-dollar" />
+                    <input bind:value={dato.dinero} type="number" placeholder="00"  />
+                </div>
             </div>
 
             <div class="cont-select mt">
@@ -194,3 +196,17 @@
         </div>
     </div>
 </div>
+
+<style>
+    .shadow{
+        box-shadow: 3px 3px rgb(208, 207, 207);
+        border-radius: 10px;
+    }
+
+    .just{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+</style>

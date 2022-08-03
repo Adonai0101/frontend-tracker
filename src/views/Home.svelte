@@ -16,6 +16,7 @@
     import axios from "axios";
 
     import Lista  from '../components/Lista.svelte'
+    import LoginBtn from '../components/LoginBtn.svelte'
 
     onMount(() => {
         if (!$isLoggedIn) {
@@ -80,6 +81,11 @@
 	function terminar(){
 		confirm.set(true)
 	}
+
+    function ver(){
+        console.log('ver mas ')
+        navigate("/test", { replace: true });
+    }
 </script>
 
 <div>
@@ -94,15 +100,25 @@
             <button
                 id="btningresos"
                 on:click={click_ingresos}
-                class="btn btn-active">INGRESOS</button
-            >
-            <button id="btngastos" on:click={click_gastos} class="btn"
-                >GASTOS</button
-            >
-        </div>
+                class="btn btn-active">
+                INGRESOS
+            </button>
 
+            <button 
+                id="btngastos"
+                on:click={click_gastos} 
+                class="btn">
+                GASTOS
+            </button>
+
+        </div>
+        
         <div class="">
             <Lista/>
+            <div class="btn-center">
+                <button class="btn btn-ver" on:click={ver}>Ver todo</button>
+            </div>
+            
         </div>
 
 
@@ -117,6 +133,39 @@
         
         {/if}
 
-
+    {:else}
+        <div class="full">
+            <div class="ingresa-google">
+                <h1>Ingresa con tu cuenta</h1>
+                <LoginBtn></LoginBtn>
+            </div>
+        </div>
     {/if}
+    
 </div>
+
+
+<style>
+    .ingresa-google{
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .full{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        height: calc(100vh - 80px)
+    }
+
+    .btn-center{
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn-ver{
+        background-color: #424649;
+        color: white;
+    }
+</style>

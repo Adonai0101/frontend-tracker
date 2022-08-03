@@ -1,3 +1,4 @@
+
 <script>
     import { auth } from "../firebase";
     import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
@@ -42,49 +43,30 @@
     };
 </script>
 
-<div class="cont-login">
-    <div class="login-google" on:click={login}>
-        <img
-            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-            alt=""
-        />
-        <p>Google</p>
-    </div>
+<div class="btn-google" on:click={login}>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="logo google">
+    <p>Google</p>
 </div>
 
 <style>
-    .cont-login {
-        margin: 0;
-        padding: 0;
-        height: calc(100vh - 80px);
-        width: 100vw;
-        box-sizing: border-box;
-        
-        border: solid red 1px;
-
-        display: flex;
-        justify-content: center;
-    }
-    .login-google {
-        width: 80%;
-        height: 100px;
-        border: solid 2px lightslategray;
-        margin: 20%;
-        border-radius: 10px;
-        padding: 10px;
+    .btn-google{
+        border: solid whitesmoke 2px;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 20px;
-    }
-    .login-google img {
-        width: 50px;
-        height: 50px;
+        gap: 10px;
+
+        padding: 15px;
     }
 
-    .login-google p {
-        font-size: 55px;
-        letter-spacing: 1px;
-        color: lightslategrey;
+    img{
+        width: 30px;
+        height: 30px;
+        border: none;
+    }
+
+    p{
+        font-size: 20px;
+        letter-spacing: 2px;
     }
 </style>

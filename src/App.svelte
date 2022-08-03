@@ -1,14 +1,14 @@
 <script>
-	import { Router, Link, Route } from "svelte-routing";
+	import { Router, Route } from "svelte-routing";
 	import { onMount } from "svelte";
 
 	import { onAuthStateChanged } from "firebase/auth";
 	import { auth } from "./firebase";
-	import { isLoggedIn, user,confirm , modalItem,ingresos,gastos} from "./stores";
+	import { isLoggedIn, user,confirm , modalItem} from "./stores";
 
 	import Home from "./views/Home.svelte";
-	import Login from "./views/Login.svelte";
 	import Historial from "./views/Historial.svelte";
+	import Test from "./views/Test.svelte";
 
 	import Navbar from "./components/Navbar.svelte";
 	import Sidebar from "./components/Sidebar.svelte";
@@ -48,9 +48,10 @@
 					<Historial></Historial>
 				</Route>
 
-				<Route path="/login">
-					<Login />
+				<Route path="/test">
+					<Test></Test>
 				</Route>
+
 			</Router>
 
 			

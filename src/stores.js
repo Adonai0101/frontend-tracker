@@ -3,7 +3,7 @@ import {writable} from 'svelte/store'
 export const user = writable({})
 export const isLoggedIn = writable(false)
 
-export const tipo_registro = writable('ingresos')
+export let tipo_registro = writable('ingresos')
 
 export let cuenta = writable("principal")
 

@@ -21,6 +21,8 @@
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "firebase": "^9.8.1",
+    "firebase-tools": "^11.3.0",
+    "n": "^9.0.0",
     "sirv-cli": "^2.0.0",
     "svelte-routing": "^1.6.0",
     "sweetalert2": "^11.4.19"

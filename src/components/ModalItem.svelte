@@ -109,7 +109,7 @@
         position: absolute;
         bottom: 0px;
         width: 100%;
-        height: 30vh;
+        height: 40vh;
         background-color: white;
     }
 
