@@ -48,7 +48,7 @@
 
 <div>
     {#if $isLoggedIn}
-        <div class="">
+        <div class="cont">
             <Lista/>
         </div>
     {:else}
@@ -56,3 +56,11 @@
     {/if}
 
 </div>
+
+
+<style>
+    .cont{
+        height: 100vh;
+        overflow-y: scroll;
+    }
+</style>

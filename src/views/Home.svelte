@@ -113,12 +113,8 @@
 
         </div>
         
-        <div class="">
-            <Lista/>
-            <div class="btn-center">
-                <button class="btn btn-ver" on:click={ver}>Ver todo</button>
-            </div>
-            
+        <div class="cont">
+            <Lista/>            
         </div>
 
 
@@ -159,13 +155,9 @@
         height: calc(100vh - 80px)
     }
 
-    .btn-center{
-        display: flex;
-        justify-content: center;
-    }
-
-    .btn-ver{
-        background-color: #424649;
-        color: white;
+    .cont{
+        height: 50%;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 </style>

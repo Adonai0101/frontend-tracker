@@ -114,7 +114,7 @@
 
      .cont-list{
         width: 100vw;
-        height: 50vh;
+        height: 80vh;
         display: flex;
         flex-direction: column;
         gap: 10px;
