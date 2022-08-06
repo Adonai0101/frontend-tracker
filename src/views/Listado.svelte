@@ -28,6 +28,7 @@
 
         });
 
+        
         if($tipo_registro == 'ingresos'){
             console.log('test ingresos')
             const ingresos_items = document.querySelector(".ingresos_items");
@@ -43,6 +44,7 @@
             gastos_items.classList.remove('dysplay-none')
             ingresos_items.classList.add('dysplay-none')
         }
+        
     });
 </script>
 

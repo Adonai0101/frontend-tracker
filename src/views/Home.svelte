@@ -15,8 +15,8 @@
 
     import axios from "axios";
 
-    import Lista  from '../components/Lista.svelte'
     import LoginBtn from '../components/LoginBtn.svelte'
+    import Grafica from '../components/Grafica.svelte'
 
     onMount(() => {
         if (!$isLoggedIn) {
@@ -40,37 +40,26 @@
             gastoTotal.set(resp.data.gasto_total)
 
         });
+
+        
     });
+
+
 
     function click_gastos() {
         const btn_gastos = document.querySelector("#btngastos");
         const btn_ingresos = document.querySelector("#btningresos");
         btn_gastos.classList.add("btn-active");
         btn_ingresos.classList.remove("btn-active");
-
-        //agregando la "transicion" de gastos e ingresos
-        const ingresos_items = document.querySelector(".ingresos_items");
-        const gastos_items = document.querySelector(".gastos_items");
-        gastos_items.classList.remove('dysplay-none')
-        ingresos_items.classList.add('dysplay-none')
-
         tipo_registro.set("gastos");
-
     }
 
     function click_ingresos() {
         const btn_gastos = document.querySelector("#btngastos");
         const btn_ingresos = document.querySelector("#btningresos");
-
         btn_ingresos.classList.add("btn-active");
         btn_gastos.classList.remove("btn-active");
         tipo_registro.set("ingresos");
-
-        //agregando la "transicion" de gastos e ingresos
-        const ingresos_items = document.querySelector(".ingresos_items");
-        const gastos_items = document.querySelector(".gastos_items");
-        gastos_items.classList.add('dysplay-none')
-        ingresos_items.classList.remove('dysplay-none')
     }
 
     function show_modal() {
@@ -97,24 +86,54 @@
         <p class="text-center text-small">({$cuenta})</p>
 
         <div class="cont-btn">
-            <button
-                id="btningresos"
-                on:click={click_ingresos}
-                class="btn btn-active">
-                INGRESOS
-            </button>
 
-            <button 
-                id="btngastos"
-                on:click={click_gastos} 
-                class="btn">
-                GASTOS
-            </button>
+            {#if $tipo_registro == 'ingresos'}
+                 <!-- content here -->
+                 <button
+                    id="btningresos"
+                    on:click={click_ingresos}
+                    class="btn btn-active">
+                    INGRESOS
+                </button>
+
+            {:else}
+                <button
+                    id="btningresos"
+                    on:click={click_ingresos}
+                    class="btn ">
+                    INGRESOS
+                </button>
+            {/if}
+
+
+            {#if $tipo_registro == 'gastos'}
+                <button 
+                    id="btngastos"
+                    on:click={click_gastos} 
+                    class="btn btn-active">
+                    GASTOS
+                </button>
+            {:else}
+                <button 
+                    id="btngastos"
+                    on:click={click_gastos} 
+                    class="btn">
+                    GASTOS
+                </button>
+            {/if}
+
+
+
 
         </div>
         
         <div class="cont">
-            <Lista/>            
+            {#if $tipo_registro == 'gastos'}
+                 <Grafica/> 
+            {:else}
+                <Grafica/> 
+            {/if}
+               
         </div>
 
 
@@ -156,8 +175,7 @@
     }
 
     .cont{
-        height: 50%;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
     }
 </style>

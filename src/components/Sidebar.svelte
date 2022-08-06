@@ -51,11 +51,6 @@
                     <Link to = '/historial'>Historial</Link>
                 </li>
 
-                <li on:click={close_sidebar} class="sidebar-item">
-                    <i class='bx bx-calendar-alt' ></i>
-                    <Link to = '/test'>test</Link>
-                </li>
-
                 <li on:click={close_sidebar} class="sidebar-item" on:click={logout}>
                     <i class='bx bx-log-out'></i>
                     Cerrar sesión

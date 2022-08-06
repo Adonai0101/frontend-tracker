@@ -8,8 +8,10 @@ export let tipo_registro = writable('ingresos')
 export let cuenta = writable("principal")
 
 
-
-export const server = writable('https://backend-tracker.onrender.com')
+//server prod
+//export const server = writable('https://backend-tracker.onrender.com')
+//server dev
+export const server = writable('http://localhost:5000/')
 
 // aqui manejaremos las variables de los items
 export let total = writable("0")
@@ -28,3 +30,8 @@ export let confirm = writable(false)
 
 //variables para el historial
 export let historial = writable([])
+
+
+//variables para la grafica
+export let categorias = writable([])
+export let valores = writable([])

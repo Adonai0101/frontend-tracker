@@ -8,7 +8,7 @@
 
 	import Home from "./views/Home.svelte";
 	import Historial from "./views/Historial.svelte";
-	import Test from "./views/Test.svelte";
+	import Listado from "./views/Listado.svelte";
 
 	import Navbar from "./components/Navbar.svelte";
 	import Sidebar from "./components/Sidebar.svelte";
@@ -48,8 +48,8 @@
 					<Historial></Historial>
 				</Route>
 
-				<Route path="/test">
-					<Test></Test>
+				<Route path="/listado">
+					<Listado></Listado>
 				</Route>
 
 			</Router>
