@@ -11,6 +11,7 @@
         //obteniendo los datos para la grafica
         let uid = localStorage.getItem("uid");
         let url = $server + "/dinero/grafica";
+        console.log('grafia url: ' + url)
         let dato = {
             uid: uid,
             tipoRegistro: $tipo_registro,
