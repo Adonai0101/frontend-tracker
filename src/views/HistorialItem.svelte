@@ -1,10 +1,10 @@
 <script>
-    import {isLoggedIn,server,historialItem} from "../stores";
+    import {isLoggedIn,server,historialItem,historialItemGastos,historialItemIngresos} from "../stores";
     import { onMount } from "svelte";
     import axios from "axios";
 
     var id = localStorage.getItem("idHistorial")
-    var url = $server + 'historial/item/' + id 
+    var url = $server + '/historial/item/' + id 
 
     var respuesta 
     onMount(() => {
@@ -12,7 +12,11 @@
             axios.get(url)
             .then((resp) => {
                 respuesta = resp.data
+                var gastos = respuesta.gastos
+                var ingresos = respuesta.ingresos
                 historialItem.set(respuesta)
+                historialItemIngresos.set(ingresos)
+                historialItemGastos.set(gastos)
                 console.log($historialItem)
             });
         });
@@ -31,7 +35,7 @@
         <div class="cont-registros">
             <div class="cont-ingresos">
                 <h3 class="text-center">Ingresos</h3>
-                {#each $historialItem.ingresos as {comentario,dinero,id}}
+                {#each $historialItemIngresos as {comentario,dinero,id}}
                     <div class="item">
                         <i class='bx bx-dollar-circle ingresos-icon'></i>
                         {#if comentario == ''}
@@ -48,7 +52,7 @@
 
             <div class="cont-gastos">
                 <h3 class="text-center">Gastos</h3>
-                {#each $historialItem.gastos as {comentario,dinero,id}}
+                {#each $historialItemGastos as {comentario,dinero,id}}
                     <div class="item">
                         <i class='bx bx-dollar-circle gastos-icon'></i>
                         {#if comentario == ''}

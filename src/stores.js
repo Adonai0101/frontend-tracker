@@ -30,8 +30,11 @@ export let confirm = writable(false)
 
 //variables para el historial (lista de historikal)
 export let historial = writable([])
-//variable para el historial (items por item)
+//variable para el historial (items por item) 
 export var historialItem = writable([])
+//para la shit de los ingresos y gastos
+export var historialItemGastos = writable([])
+export var historialItemIngresos = writable([])
 
 //variables para la grafica
 export let categorias = writable([])
