@@ -10,6 +10,8 @@
 	import Historial from "./views/Historial.svelte";
 	import Listado from "./views/Listado.svelte";
 
+	import HistorialItem from "./views/HistorialItem.svelte";
+
 	import Navbar from "./components/Navbar.svelte";
 	import Sidebar from "./components/Sidebar.svelte";
 	import Modal from "./components/Modal.svelte";
@@ -50,6 +52,10 @@
 
 				<Route path="/listado">
 					<Listado></Listado>
+				</Route>
+
+				<Route path="/historial/item">
+					<HistorialItem/>
 				</Route>
 
 			</Router>

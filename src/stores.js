@@ -9,9 +9,9 @@ export let cuenta = writable("principal")
 //comentario de shit solo para el commit
 
 //server prod
-export const server = writable('https://backend-tracker.onrender.com')
+//export const server = writable('https://backend-tracker.onrender.com')
 //server dev
-//export const server = writable('http://localhost:5000/')
+export const server = writable('http://localhost:5000/')
 
 // aqui manejaremos las variables de los items
 export let total = writable("0")
@@ -28,9 +28,10 @@ export let idModalItem = writable("")
 export let confirm = writable(false)
 
 
-//variables para el historial
+//variables para el historial (lista de historikal)
 export let historial = writable([])
-
+//variable para el historial (items por item)
+export var historialItem = writable([])
 
 //variables para la grafica
 export let categorias = writable([])

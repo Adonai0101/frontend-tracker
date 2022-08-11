@@ -31,6 +31,11 @@
                 historial.set(respuesta)
             });
         }
+
+        function see(id){
+            localStorage.setItem('idHistorial', id);
+            navigate("/historial/item", { replace: true });
+        }
 </script>
 
 
@@ -40,7 +45,7 @@
         <div class="cont-items">
             {#each $historial as {id},i}
                 
-                <div class="historial-item">
+                <div class="historial-item" on:click={() => see($historial[i].id)}>
                     <div>
                         <p>Ingresos: ${$historial[i].ingresoTotal}</p>
                         <p>Gastos: ${$historial[i].gastoTotal}</p>
@@ -65,7 +70,7 @@
         width: 100vw;
         height: 100vh;
         padding: 10px;
-
+        overflow-y: scroll;
     }
 
     .cont-items{

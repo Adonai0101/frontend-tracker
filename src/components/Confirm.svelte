@@ -1,5 +1,5 @@
 <script>
-    import { confirm,server,cuenta,total,ingresos,gastos,ingresoTotal,gastoTotal} from "../stores";
+    import { confirm,server,cuenta,total,ingresos,gastos,ingresoTotal,gastoTotal,categorias,valores} from "../stores";
     import axios from "axios";
 
 
@@ -22,6 +22,10 @@
             ingresos.set(resp.data.ingresos)
             ingresoTotal.set(resp.data.ingreso_total)
             gastoTotal.set(resp.data.gasto_total)
+
+            //limpiamos los valores de las graficas
+            categorias.set([])
+            valores.set([])
 
             cancelar()
 			
